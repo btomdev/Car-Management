@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% block fos_user_content %}
+
+        <main class="container">
+
+            <div class="row">
+                <div class="col-md-3 offset-md-4 mt-4">
+                    <form action="{{ path("fos_user_security_check") }}" method="post" class="text-dark">
+                        <h1 class="h3 mb-3 fw-normal text-center">Connexion</h1>
+
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+                            <label for="username">username</label>
+                        </div>
+
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="password" name="_password" required="required" autocomplete="current-password" />
+                            <label for="password">password</label>
+                        </div>
+
+                        <div class="checkbox mb-3">
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            <label for="remember_me">remember me</label>
+                        </div>
+
+                        {% if csrf_token %}
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        {% endif %}
+
+                        <button class="w-100 btn btn-lg btn-dark" type="submit">Se connecter</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+
+    {% endblock fos_user_content %}
+{% endblock %}

@@ -1,0 +1,12 @@
+# IDEs and editors
+/.idea
+
+# Ignore dossier data/
+data/
+
+# Ignore dossier logs/
+logs/
+
+# Ignore environment configuration file
+.env
+!app/.env

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car index{% endblock %}
+
+{% block body %}
+
+    <main class="container text-dark mt-5">
+
+        <div class="row">
+            <h1 class="h3 mb-3 fw-normal text-center">Liste des Voitures</h1>
+        </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-center my-3">
+                <a href="{{ path('car_new') }}" class="btn btn-dark">Créer une voiture</a>
+            </div>
+        </div>
+
+        {% include 'car/_filter.html.twig' with {'form': form} only %}
+        {% include 'car/_table.html.twig' with {'cars': cars, 'dashboard': true} only %}
+    </main>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<nav class="text-white d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{{ path('home') }}" class="nav-link px-2 link-secondary text-light {{ app.request.get('_route') == 'home' ? 'text-decoration-underline' : '' }}">Home</a></li>
+        {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+            <li><a href="{{ path('admin') }}" class="nav-link px-2 link-secondary text-light {{ app.request.get('_route') == 'admin' ? 'text-decoration-underline' : '' }}">Admin</a></li>
+            <li><a href="{{ path('car_index') }}" class="nav-link px-2 link-secondary text-light {{ app.request.get('_route') == 'car_index' ? 'text-decoration-underline' : '' }}">Voitures</a></li>
+        {% endif %}
+        <hr>
+    </ul>
+
+    {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+        <div class="col-md-3 text-end">
+            <a href="{{ path('fos_user_security_logout') }}" class="btn btn-light">Déconnexion</a>
+        </div>
+    {% else %}
+        <div class="col-md-3 text-end">
+            <a href="{{ path('fos_user_security_login') }}" class="btn btn-light">Connexion</a>
+            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-light">Inscription</a>
+        </div>
+    {% endif %}
+</nav>

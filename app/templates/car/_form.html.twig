@@ -1,0 +1,31 @@
+{{ form_start(form, {'attr': {'id': 'car_form', 'class': 'text-dark'}}) }}
+
+<h1 class="h3 mb-3 fw-normal text-center">Créer une Nouvelle voiture</h1
+
+{{ form_errors(form.brand) }}
+{{ form_label(form.brand, 'Marque', {'label_attr': {'class': 'col-form-label'}}) }}
+{{ form_widget(form.brand, {'attr': {'class': 'form-control'}}) }}
+
+{{ form_errors(form.type) }}
+{{ form_label(form.type, 'Type', {'label_attr': {'class': 'col-form-label'}}) }}
+{{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+
+{{ form_errors(form.seats) }}
+{{ form_label(form.seats, 'Nombre de passagers', {'label_attr': {'class': 'col-form-label'}}) }}
+{{ form_widget(form.seats, {'attr': {'class': 'form-control'}}) }}
+
+{{ form_errors(form.color) }}
+{{ form_label(form.color, 'Couleur', {'label_attr': {'class': 'col-form-label'}}) }}
+{{ form_widget(form.color, {'attr': {'class': 'form-control ' ~ form.ptra is not defined ? 'mb-4' : '' }}) }}
+
+
+{% if form.ptra is defined %}
+    {{ form_errors(form.ptra) }}
+    {{ form_label(form.ptra, 'Poids Total Roulant Autorisé (PTRA)', {'label_attr': {'class': 'col-form-label'}}) }}
+    {{ form_widget(form.ptra, {'attr': {'class': 'form-control mb-4'}}) }}
+{% endif %}
+
+<input type="submit" class="w-100 btn btn-lg btn-dark" value="Enregister" />
+
+{{ form_errors(form) }}
+{{ form_end(form) }}

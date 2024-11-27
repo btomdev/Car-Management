@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Gestion des Voitures 🚗 🚙 🚕 🚛 🛻" %}
+
+{% block body %}
+
+    <main class="container">
+        {% include 'car/_filter.html.twig' with {'form': form} only %}
+        {% include 'car/_table.html.twig' with {'cars': cars} only %}
+    </main>
+
+{% endblock %}

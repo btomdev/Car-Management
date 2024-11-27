@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Car{% endblock %}
+
+{% block body %}
+       <main class="container">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2 mt-4">
+
+                    {% include 'car/_form.html.twig' with {'form': form} only %}
+
+                </div>
+            </div>
+
+    </main>
+{% endblock %}

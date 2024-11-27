@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin - Voitures{% endblock %}
+
+{% block body %}
+
+    <main class="container text-dark mt-5">
+        <div class="row">
+            <h1 class="h3 mb-3 fw-normal text-center">Compte Admin</h1>
+        </div>
+        {% include 'car/_filter.html.twig' with {'form': form} only %}
+        {% include 'car/_table.html.twig' with {'cars': cars, 'dashboard': true} only %}
+    </main>
+
+{% endblock %}

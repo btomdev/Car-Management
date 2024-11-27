@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center sr-only">
+    <div class="row">
+        {{ form_start(form, {attr: {class: 'form-inline d-inline-flex flex-row align-items-end'}}) }}
+        <div class="col mx-1">
+            {{ form_row(form.brand) }}
+        </div>
+        <div class="col mx-1">
+            {{ form_row(form.type) }}
+        </div>
+        <div class="col mx-1">
+            {{ form_row(form.seats) }}
+        </div>
+        <div class="col mx-1">
+            {{ form_row(form.sort) }}
+        </div>
+        <div class="col mx-1">
+            <button type="submit" class="btn btn-dark mb-3">Filter la liste</button>
+        </div>
+        {{ form_errors(form) }}
+        {{ form_end(form) }}
+    </div>
+</div>
