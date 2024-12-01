@@ -7,6 +7,5 @@ data/
 # Ignore dossier logs/
 logs/
 
-# Ignore environment configuration file
-.env
-!app/.env
+# Ignore environment config file
+/.env.local
